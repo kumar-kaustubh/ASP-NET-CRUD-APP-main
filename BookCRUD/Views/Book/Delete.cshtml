@@ -1,0 +1,26 @@
+﻿@model BookAPI.Models.BookAPIDb
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <h1 class="col text-center">Edit Book - @Model.Title</h1>
+</div>
+
+<form method="post" asp-action="Delete">
+
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><label asp-for="Title" class="form-label mt-4"></label><input asp-for="Title" class="form-control" disabled></h4>
+        @*<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>*@
+        <p class="card-text"><label asp-for="Description" class="form-label mt-4"></label><input asp-for="Description" class="form-control" disabled></p>
+        <div>
+            <div class="m-1">Image</div>
+            <img src="@Model.Image" width="100px" height="150px"/>
+        </div>
+        <p class="card-text"><label asp-for="Price" class="form-label mt-4"></label><input asp-for="Price" class="form-control" disabled></p>
+        <input type="submit" class="btn btn-warning" value="Delete">
+        <a  class="btn btn-dark">Cancel</a>
+      </div>
+    </div>
+</form>
